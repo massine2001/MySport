@@ -83,18 +83,18 @@ function App() {
           item!== 'menu' && 
           <>
           {Object.entries(Week).filter(([day]) => day === item).map(([jour, details]) => (
-            <table>
+            <table key={jour}>
               <title>{jour} | {details?.muscularGroup}</title>
-              <tbody>
-                  <th>Exercice</th>
-                  <th>Répétition</th>
-                {Object.entries(details?.exercice || []).map(([exo, rep]) => (
-                  <tr>
-                    <td>{exo}</td>
-                    <td>{rep}</td>
-                  </tr>
-                ))}
-              </tbody>
+                <th>Exercice</th>
+                <th>Répétition</th>
+                <tbody>
+                  {Object.entries(details?.exercice || []).map(([exo, rep]) => (
+                    <tr key={exo}>
+                      <td>{exo}</td>
+                      <td>{rep}</td>
+                    </tr>
+                  ))}
+                </tbody>
             </table>
           ))}
           <button onClick={() => {setItem('menu')}}>Menu</button>

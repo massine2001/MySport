@@ -36,47 +36,106 @@
     transform: rotate(360deg);
   }
 }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+  color: white;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4vh 2vw;
+}
 
 .week {
-  padding: 1vh;
-  border: 1px solid white;
-  border-radius: 8px;
-  width: 50vh;
-  margin: 1vh;
+  padding: 1.5vh 2vw;
+  margin: 1vh 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  width: 60vw;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 1.2em;
+  letter-spacing: 0.5px;
 }
 
 .week:hover {
-  background-color: gray;
+  background-color: rgba(255, 255, 255, 0.15);
   cursor: pointer;
+  transform: scale(1.02);
 }
 
 .week:active {
-  background-color: darkgray;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 table {
-  width: 50vw;
+  width: 80vw;
+  max-width: 700px;
+  border-collapse: collapse;
+  margin-top: 3vh;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 td, th {
-  border: 1px solid white;
-  padding: 1vh;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1vh 1vw;
+  text-align: left;
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 button {
-  border: 0;
-  background-color: lightcyan;
-  padding: 1vw;
+  margin-top: 3vh;
+  background-color: #00c9a7;
+  color: #1f1f1f;
+  border: none;
+  padding: 1.2vh 2vw;
   border-radius: 8px;
-  width: 8vw;
-  margin: 2vh;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  width: 25vw;
+  max-width: 150px;
 }
 
 button:hover {
-  background-color: gray;
+  background-color: #00b296;
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 button:active {
-  background-color: darkgray;
+  background-color: #009e85;
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .week {
+    width: 90vw;
+    font-size: 1em;
+  }
+
+  table {
+    width: 95vw;
+  }
+
+  button {
+    width: 50vw;
+    font-size: 1em;
+  }
 }
